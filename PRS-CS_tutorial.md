@@ -23,7 +23,7 @@ where SNP is the rs ID, A1 is the effect allele, A2 is the alternative allele, B
 # Computing PRS in the EUR subsets of ABCD or COGA or UK Biobank using PRS-cs
 ### Setup: Copy over the master script for the cohort you are using into your working directory
 
-COGA master script = /lts/aalab/arpana_data/community_scripts/coga_eur_prscs/0-master_prscs.sh  
+COGA master script = work in progress
 
 ### Step 1: Run PRS-cs
 
@@ -31,7 +31,7 @@ To run the first step of the master script you use the command format:
 bash 0-master_prscs.sh step1 [NAME OF TRAIT] [path to sum stats] [GWAS sample size]
 
 For example:  
-bash 0-master_prscs.sh step1 pau /scratch/aalab/suri/data/cleaned_data/pau_forPRS.txt 435563
+bash 0-master_prscs.sh step1 pau /path/to/summary_stats_file.txt 435563
 
 This will start 22 array jobs (one for each chromosome) that should finish in <1 day. Once all of these jobs are complete (check the queue), you can move on to step 2. 
 
@@ -46,7 +46,7 @@ bash 0-master_prscs.sh step2 pau
 Your scores will be located in a file with the following naming scheme:
 
 ```
-${WORKING_DIR}/${trait}_prs/output/${trait}_${coga_or_abcd}_eur_prs_complete.txt
+${WORKING_DIR}/${trait}_prs/output/${trait}_${coga}_eur_prs_complete.txt
 ```
 
 # Computing PRS in the AFR subsets of COGA using PRS-csx
@@ -55,7 +55,7 @@ To compute PRS in our AFR ancestry subsets, we use PRS-csx which incorporates GW
 
 ### Setup: Copy over the master script for the cohort you are using into your working directory
 
-COGA master script = /lts/aalab/arpana_data/community_scripts/coga_afr_prscsx/0-master_prscsx.sh  
+COGA master script = work in progress  
 
 ### Step 1: Run PRS-cs
 
@@ -63,7 +63,7 @@ To run the first step of the master script you use the command format:
 bash 0-master_prscsx.sh step1 [NAME OF TRAIT] [path to sum stats] [order of GWAS ancestries] [GWAS sample sizes]
 
 For example:  
-bash 0-master_prscsx.sh step1 pau ../data/pau_no_coga_forPRS.txt ../data/aud_afr_forPRS.txt EUR AFR 351113 56648
+bash 0-master_prscsx.sh step1 pau ../data/ancestry1_summarystats.txt ../data/ancestry2_summarystat.txt EUR AFR 351113 56648
 
 This will start 22 array jobs (one for each chromosome) that should finish in <1 day. Once all of these jobs are complete (check the queue), you can move on to step 2. 
 
@@ -77,7 +77,7 @@ bash 0-master_prscsx.sh step2 pau
 
 Your scores will be located in a file with the following naming scheme:
 ```
-${WORKING_DIR}/${trait}_afr_prs/output/${trait}_${coga_or_abcd}_afr_prs_complete.txt
+${WORKING_DIR}/${trait}_afr_prs/output/${trait}_${coga}_afr_prs_complete.txt
 ```
 
 # Info on PRS-cs settings
@@ -86,7 +86,7 @@ ${WORKING_DIR}/${trait}_afr_prs/output/${trait}_${coga_or_abcd}_afr_prs_complete
 - n_iter = 10000
 - n_burnin = 5000
 - seed = 1234
-- reference files = 1000 genomes files located in /ref/aalab/data/prscs
+- reference files = 1000 genomes files 
 - for AA analysis using PRS-csx, meta = TRUE 
 
 # Info on COGA target dataset:
