@@ -1,2 +1,2 @@
 # COGA
-Repository for COGA analysis scripts 
+This is a repository for COGA analysis scripts. 
