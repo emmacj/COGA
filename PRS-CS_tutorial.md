@@ -1,5 +1,5 @@
 # Overview
-This directory provides example code for you to calculate PRS from a discovery GWAS in a target sample. The pipeline automatically provides files for target samples of interest, specifically COGA, and reference files so that you do not need to download them or move files to scratch. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. 
+This directory provides example code for you to calculate PRS from a discovery GWAS in a target sample. You will need to have access to the COGA data in binary Plink format (bed/bim/fam files), and will need to download reference files from the PRS-CS and PRS-CSx websites. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. 
 # Prep for pipeline
 "The summary statistics file must have the following format (including the header line):
 
