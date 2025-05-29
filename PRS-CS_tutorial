@@ -1,5 +1,5 @@
 # Overview
-This directory allows you to calculate PRS from a discovery GWAS in a target sample. The pipeline automatically provides files for target samples of interest, specifically ABCD, COGA, and UK Biobank, and reference files so that you do not need to download them or move files to scratch. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. The software is already installed on htcf so you do not need to install it. 
+This directory allows you to calculate PRS from a discovery GWAS in a target sample. The pipeline automatically provides files for target samples of interest, specifically COGA, and reference files so that you do not need to download them or move files to scratch. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. The software is already installed on htcf so you do not need to install it. 
 
 # Prep for pipeline
 "The summary statistics file must have the following format (including the header line):
@@ -25,8 +25,6 @@ where SNP is the rs ID, A1 is the effect allele, A2 is the alternative allele, B
 ### Setup: Copy over the master script for the cohort you are using into your working directory
 
 COGA master script = /lts/aalab/arpana_data/community_scripts/coga_eur_prscs/0-master_prscs.sh  
-ABCD master script = /lts/aalab/arpana_data/community_scripts/abcd_eur_prscs/0-master_prscs.sh  
-UKB master script = /lts/aalab/arpana_data/community_scripts/ukb_eur_prscs/0-master_prscs.sh
 
 ### Step 1: Run PRS-cs
 
@@ -52,14 +50,13 @@ Your scores will be located in a file with the following naming scheme:
 ${WORKING_DIR}/${trait}_prs/output/${trait}_${coga_or_abcd}_eur_prs_complete.txt
 ```
 
-# Computing PRS in the AFR subsets of ABCD or COGA using PRS-csx
+# Computing PRS in the AFR subsets of COGA using PRS-csx
 
 To compute PRS in our AFR ancestry subsets, we use PRS-csx which incorporates GWAS from multiple ancestries. In our case, we use GWAS of EUR and AFR samples to increase power.
 
 ### Setup: Copy over the master script for the cohort you are using into your working directory
 
 COGA master script = /lts/aalab/arpana_data/community_scripts/coga_afr_prscsx/0-master_prscsx.sh  
-ABCD master script = /lts/aalab/arpana_data/community_scripts/abcd_afr_prscsx/0-master_prscsx.sh
 
 ### Step 1: Run PRS-cs
 
@@ -98,11 +95,6 @@ ${WORKING_DIR}/${trait}_afr_prs/output/${trait}_${coga_or_abcd}_afr_prs_complete
 - EUR files imputed using hrc
 - AFR files imputed using caapa
 - filtered to MAF > 0.01, HWE>10^-6, INFO>=0.8 and marker genotype rate >95%
-
-# Info on ABCD target datasets:
-
-- imputed using topmed
-- filtered to Rsq > 0.8, MAF > 0.01, --mind 0.1, --geno 0.1, and --hwe 1e-6
 
 # Info on UK Biobank target datasets:
 - filtered for info >= 0.9, maf >= 0.01, hwe-p >= 1E-06, missingess <= 0.01
