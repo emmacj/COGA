@@ -1,6 +1,5 @@
 # Overview
-This directory allows you to calculate PRS from a discovery GWAS in a target sample. The pipeline automatically provides files for target samples of interest, specifically COGA, and reference files so that you do not need to download them or move files to scratch. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. The software is already installed on htcf so you do not need to install it. 
-
+This directory provides example code for you to calculate PRS from a discovery GWAS in a target sample. The pipeline automatically provides files for target samples of interest, specifically COGA, and reference files so that you do not need to download them or move files to scratch. This pipeline uses [PRScs](https://github.com/getian107/PRScs/blob/master/README.md "PRScs") and [PRScsx](https://github.com/getian107/PRScsx) and assumes that your GWAS summary statistics are already in the correct file format. 
 # Prep for pipeline
 "The summary statistics file must have the following format (including the header line):
 
@@ -95,6 +94,3 @@ ${WORKING_DIR}/${trait}_afr_prs/output/${trait}_${coga_or_abcd}_afr_prs_complete
 - EUR files imputed using hrc
 - AFR files imputed using caapa
 - filtered to MAF > 0.01, HWE>10^-6, INFO>=0.8 and marker genotype rate >95%
-
-# Info on UK Biobank target datasets:
-- filtered for info >= 0.9, maf >= 0.01, hwe-p >= 1E-06, missingess <= 0.01
