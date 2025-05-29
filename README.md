@@ -2,7 +2,7 @@
 This is a repository for COGA analysis scripts. Some subdirectories also link out to published COGA manuscripts and publicly-available summary statistics.
 
 # Common analyses
-Computing polygenic risk scores in COGA using PRS-CS  
+[Computing polygenic risk scores in COGA using PRS-CS](https://github.com/emmacj/COGA/blob/main/PRS-CS_tutorial)  
 Computing polygenic scores in COGA use SBayesRC
 
 # Special issue of COGA manuscripts in Genes, Brain and Behavior
