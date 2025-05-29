@@ -13,4 +13,4 @@ Computing polygenic scores in COGA use SBayesRC
 [Collaborative Study on the Genetics of Alcoholism: Functional genomics](https://onlinelibrary.wiley.com/doi/10.1111/gbb.12855)  
 [Commentary: Collaborative study on the genetics of alcoholism: The strength of collaboration, team science, and longitudinal data](https://onlinelibrary.wiley.com/doi/10.1111/gbb.12866)  
 
-
+# Published COGA manuscripts and accompanying code and summary stats (if applicable)  
