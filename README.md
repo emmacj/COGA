@@ -1,4 +1,4 @@
-# COGA
+# COGA - the Collaborative Study on the Genetics of Alcoholism
 This is a repository for COGA analysis scripts. Some subdirectories also link out to published COGA manuscripts and publicly-available summary statistics.
 
 # Common analyses
